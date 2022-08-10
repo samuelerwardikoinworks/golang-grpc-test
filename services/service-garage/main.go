@@ -19,9 +19,7 @@ func init() {
 	localStorage.List = make(map[string]*model.GarageList)
 }
 
-type GaragesServer struct {
-	model.UnimplementedGaragesServer
-}
+type GaragesServer struct{}
 
 func (GaragesServer) Add(ctx context.Context, param *model.GarageAndUserId) (*empty.Empty, error) {
 	userId := param.UserId

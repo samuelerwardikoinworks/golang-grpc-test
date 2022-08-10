@@ -19,9 +19,7 @@ func init() {
 	localStorage.List = make([]*model.User, 0)
 }
 
-type UsersServer struct {
-	model.UnimplementedUsersServer
-}
+type UsersServer struct{}
 
 func (UsersServer) Register(ctx context.Context, param *model.User) (*empty.Empty, error) {
 	localStorage.List = append(localStorage.List, param)
